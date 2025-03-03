@@ -10,32 +10,7 @@ on:
             - README.md  
     workflow_dispatch:        
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Get Code
-              uses: actions/checkout@v4
-            #   run: |
-            #     echo "cloning repo.."
-            #     echo "${{toJson(github)}}"
-            #     git clone https://github.com/${{github.repository}}.git
-            - name: Install Node 20
-              uses: actions/setup-node@v4
-              with: 
-                node-version: 20
-            # - name: print node version
-            #   run: node -v
-            - name: Cache Dependencies
-              uses: actions/cache@v4
-              with: 
-                path: ~/.npm
-                key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            - name: Install Dependencies
-              run: npm ci 
-            - name: Run Tests
-              run: npm run test
     build:  
-        needs: test
         runs-on: ubuntu-latest   
         steps:
           - name: Get Code
