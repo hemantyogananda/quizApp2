@@ -20,18 +20,18 @@ jobs:
           - name: Setup Expo
             uses: expo/expo-github-action@v8
             with:
-            eas-version: latest
-            token: ${{ secrets.TEST }}
+              eas-version: latest
+              token: ${{ secrets.EXPO_TOKEN }}
           - name: 📦 Install dependencies
             run: npm install
           - name: 📦 Publish to Expo Go
-            run: NODE_ENV=dev expo publish --non-interactive --release-channel-pr-${{ github.event.number }}
+            run: eas build --non-interactive --platform="android"
           - name: Add Expo link to PR
             uses: mshick/add-pr-comment@v2
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
+            with:
               message: |
-                **Hello**
-                🌏
-                !
+                ## Test this PR with Expo Go
+                ![Expo QR](https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=exp://exp.host/@hemant08/quizapp?release-channel=pr-${{ github.event.number }})
+                **------ Build published to [Expo](https://exp.host/@hemant08/quizapp?release-channel=pr-${{ github.event.number }}) ------**
