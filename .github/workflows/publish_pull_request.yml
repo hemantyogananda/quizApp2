@@ -25,7 +25,7 @@ jobs:
           - name: 📦 Install dependencies
             run: npm install
           - name: 📦 Publish to Expo Go
-            run: expo publish --non-interactive --release-channel-pr-${{ github.event.number }}
+            run: eas build --non-interactive --platform --release-channel-pr-${{ github.event.number }}
           - name: Add Expo link to PR
             uses: mshick/add-pr-comment@v2
             env:
