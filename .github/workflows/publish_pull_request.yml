@@ -30,8 +30,8 @@ jobs:
             uses: mshick/add-pr-comment@v2
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                message: |
-                  ## Test this PR with Expo Go
-                  ![Expo QR](https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=exp://exp.host/@hemant08/quizapp?release-channel=pr-${{ github.event.number }})
-                  **------ Build published to [Expo](https://exp.host/@hemant08/quizapp?release-channel=pr-${{ github.event.number }}) ------**
+            with:
+              message: |
+                ## Test this PR with Expo Go
+                ![Expo QR](https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=exp://exp.host/@hemant08/quizapp?release-channel=pr-${{ github.event.number }})
+                **------ Build published to [Expo](https://exp.host/@hemant08/quizapp?release-channel=pr-${{ github.event.number }}) ------**
