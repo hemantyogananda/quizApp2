@@ -1,8 +1,9 @@
 name: Publish Pull Request
 on: 
-  push_request
-  branches:
-    - develop
+  push:
+    branches:
+      - develop
+      - 'feature/**'
 jobs:
     publish:
         runs-on: ubuntu-latest
