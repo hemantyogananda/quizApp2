@@ -21,11 +21,11 @@ jobs:
             uses: expo/expo-github-action@v8
             with:
               eas-version: latest
-              token: ${{ secrets.TEST }}
+              token: ${{ secrets.EXPO_TOKEN }}
           - name: 📦 Install dependencies
             run: npm install
           - name: 📦 Publish to Expo Go
-            run: eas build --platform all --non-interactive --no-wait
+            run: expo publish --non-interactive --release-channel-pr-${{ github.event.number }}
           - name: Add Expo link to PR
             uses: mshick/add-pr-comment@v2
             env:
