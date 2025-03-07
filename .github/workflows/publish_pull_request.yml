@@ -20,12 +20,13 @@ jobs:
           - name: Setup Expo
             uses: expo/expo-github-action@v8
             with:
+              expo-cache: true
               eas-version: latest
               token: ${{ secrets.EXPO_TOKEN }}
           - name: 📦 Install dependencies
             run: npm install
           - name: 📦 Publish to Expo Go
-            run: eas build --non-interactive --platform="android"
+            run: expo publish --non-interactive --platform="android"
           - name: Add Expo link to PR
             uses: mshick/add-pr-comment@v2
             env:
