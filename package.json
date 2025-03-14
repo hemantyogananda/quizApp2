@@ -11,8 +11,6 @@
   "dependencies": {
     "eas-cli": "^15.0.14",
     "expo": "~52.0.37",
-    "expo-cli": "^6.3.12",
-    "expo-dev-client": "~5.0.12",
     "expo-status-bar": "~2.0.1",
     "firebase": "^11.3.1",
     "react": "18.3.1",
