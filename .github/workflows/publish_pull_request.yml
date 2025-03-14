@@ -20,6 +20,7 @@ jobs:
           - name: Setup Expo
             uses: expo/expo-github-action@v8
             with:
+              expo-cache: true
               eas-version: latest
               token: ${{ secrets.EXPO_TOKEN }}
           - name: 📦 Install dependencies
