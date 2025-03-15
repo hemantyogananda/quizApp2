@@ -23,10 +23,20 @@ jobs:
               expo-cache: true
               eas-version: latest
               token: ${{ secrets.EXPO_TOKEN }}
+          - name: 📝 Configure Git safe directory
+            run: git config --global --add safe.directory $GITHUB_WORKSPACE
           - name: 📦 Install dependencies
             run: npm install
-          - name: 📦 Publish to Expo Go
-            run: eas build --non-interactive --platform="android"
+          - name: Setup EAS
+            uses: expo/expo-github-action@v8
+            with:
+              eas-version: latest
+              token: ${{ secrets.EXPO_TOKEN }}
+          - name: Create preview
+            uses: expo/expo-github-action/preview@v8
+            with:
+              command: eas update --auto
+          
           - name: Add Expo link to PR
             uses: mshick/add-pr-comment@v2
             env:
@@ -34,5 +44,5 @@ jobs:
             with:
               message: |
                 ## Test this PR with Expo Go
-                ![Expo QR](https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=exp://exp.host/@hemant08/quizapp?release-channel=pr-${{ github.event.number }})
-                **------ Build published to [Expo](https://exp.host/@hemant08/quizapp?release-channel=pr-${{ github.event.number }}) ------**
+                ![Expo QR](https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=exp://expo.dev/accounts/hemant08/projects/quizapp/builds/8ea15a44-06e8-41d0-bab5-a950598ff1a1)
+                **------ Build published to [Expo](https://expo.dev/accounts/hemant08/projects/quizapp/builds/8ea15a44-06e8-41d0-bab5-a950598ff1a1) ------**
