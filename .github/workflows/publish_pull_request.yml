@@ -44,5 +44,5 @@ jobs:
             with:
               message: |
                 ## Test this PR with Expo Go
-                ![Expo QR](https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=exp://exp.dev/accounts/hemant08/projects/quizapp/builds/8ea15a44-06e8-41d0-bab5-a950598ff1a1)
-                **------ Build published to [Expo](https://exp.dev/accounts/hemant08/projects/quizapp/builds/8ea15a44-06e8-41d0-bab5-a950598ff1a1) ------**
+                ![Expo QR](https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=exp://expo.dev/accounts/hemant08/projects/quizapp/builds/8ea15a44-06e8-41d0-bab5-a950598ff1a1)
+                **------ Build published to [Expo](https://expo.dev/accounts/hemant08/projects/quizapp/builds/8ea15a44-06e8-41d0-bab5-a950598ff1a1) ------**
