@@ -41,7 +41,7 @@ jobs:
           - name: Add Expo link to PR
             uses: mshick/add-pr-comment@v2
             env:
-              EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             with:
               message: |
                 ## Test this PR with Expo Go
