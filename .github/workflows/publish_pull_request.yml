@@ -26,7 +26,7 @@ jobs:
           - name: 📦 Install dependencies
             run: npm install
           - name: 📦 Publish to Expo Go
-            run: eas build --profile development --platform="android"
+            run: eas build --profile development
           - name: Add Expo link to PR
             uses: mshick/add-pr-comment@v2
             env:
