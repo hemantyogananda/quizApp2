@@ -11,20 +11,26 @@ const config: ExpoConfig = {
 
   name: 'quizapp',
   slug: 'quizapp',
+  updates: {
+    url: "https://u.expo.dev/8ea15a44-06e8-41d0-bab5-a950598ff1a1"
+  },
+  runtimeVersion: {
+    policy: "appVersion"
+  },
   extra: {
     dbName: 'test',
     eas: {
         projectId: "8ea15a44-06e8-41d0-bab5-a950598ff1a1"
     },
   },
-android: {
-    package: 'com.amarjanica.quizapp',
-    adaptiveIcon: {
-      foregroundImage: './assets/adaptive-icon.png',
-      backgroundColor: '#ffffff',
+  android: {
+      package: 'com.amarjanica.quizapp',
+      adaptiveIcon: {
+        foregroundImage: './assets/adaptive-icon.png',
+        backgroundColor: '#ffffff',
+      },
+      versionCode: androidVersion,
     },
-    versionCode: androidVersion,
-  },
 };
 
 export default config;
